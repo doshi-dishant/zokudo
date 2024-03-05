@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener
+			class-name="com.zokudo.framework.listeners.reportlistener.CucumberReport" />
+<!-- 		<listener -->
+<!-- 			class-name="com.zokudo.framework.listeners.reportlistener.CustomizedEmailableReport" /> -->
+<!-- 		<listener -->
+<!-- 			class-name="com.zokudo.framework.listeners.reportlistener.HtmlReport" /> -->
+	</listeners>
+	<test name="Test - 1">
+		<classes>
+<!-- 			<class name="com.zokudo.framework.runner.PreStepsRunner" /> -->
+<!-- 			<class name="com.zokudo.framework.runner.LatestRunner" /> -->
+<!-- 			<class name="com.zokudo.framework.runner.FailureRunner" /> -->
+<class name="com.zokudo.framework.runner.CreateOfferRunner" />
+		</classes>
+	</test>
+</suite> 	

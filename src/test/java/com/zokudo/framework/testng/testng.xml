@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener
+			class-name="com.zokudo.framework.listeners.reportlistener.CucumberReport" />
+	</listeners>
+	<test name="Test - 1">
+		<classes>
+			<class name="com.zokudo.framework.runner.CreateProgramRunner" />
+			<class name="com.zokudo.framework.runner.PocketRunner" />
+			<class name="com.zokudo.framework.runner.PreStepsRunner" />
+ 			<class name="com.zokudo.framework.runner.CreateOfferRunner" />
+ 			<class
+ 				name="com.zokudo.framework.runner.DashboardBalanceRunner" />
+ 			<class name="com.zokudo.framework.runner.DashboardRunner" />
+ 			<class name="com.zokudo.framework.runner.PrefundRunner" />
+ 			<class name="com.zokudo.framework.runner.CustomerRunner" />
+ 			<class name="com.zokudo.framework.runner.CardInventoryRunner" />
+ 			<class name="com.zokudo.framework.runner.KitAssignRunner" />
+ 			<class name="com.zokudo.framework.runner.CardIssuanceRunner" />
+ 			<class name="com.zokudo.framework.runner.LimitRunner" />
+			<class name="com.zokudo.framework.runner.CardTransactionReportRunner" />
+ 			<class name="com.zokudo.framework.runner.CardLoadRunner" />
+ 			<class name="com.zokudo.framework.runner.BulkOperationsRunner" />
+ 			<class name="com.zokudo.framework.runner.EODReportListRunner" />
+<!--  			<class name="com.zokudo.framework.runner.FailureRunner" /> -->
+<!-- 			<class name="com.zokudo.framework.runner.LatestRunner" /> -->
+<!-- 			<class name="com.zokudo.framework.runner.CardToCardTransferRunner" /> -->
+<!-- 			<class name="com.zokudo.framework.runner.LoadReversalRunner" /> -->
+			<class name="com.zokudo.framework.runner.MCCMarkUpConfigRunner" />
+		</classes>
+	</test>
+</suite> 	
