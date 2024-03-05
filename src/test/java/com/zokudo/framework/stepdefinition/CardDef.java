@@ -31,7 +31,7 @@ import io.restassured.response.Response;
 public class CardDef {
 
 	private CardTransactionReportPage cP = new CardTransactionReportPage(ObjectRepo.driver);
-	private CommonPage comP = new CommonPage(ObjectRepo.driver);
+	private CommonPage commonPage = new CommonPage(ObjectRepo.driver);
 	private CardLoadPage clP = new CardLoadPage(ObjectRepo.driver);
 	private BulkOperationsPage bP = new BulkOperationsPage(ObjectRepo.driver);
 	private CardToCardTransferPage c2cP = new CardToCardTransferPage(ObjectRepo.driver);
@@ -54,7 +54,7 @@ public class CardDef {
 
 	@Then("^user must reached to Transaction Report page validate by URL$")
 	public void user_must_reached_to_Transaction_Report_page_validate_by_URL() throws Throwable {
-		comP.verifyURL(Constants.URL + ObjectRepo.reader.getCardTransactionReportURl());
+		commonPage.verifyURL(Constants.URL + ObjectRepo.reader.getCardTransactionReportURl());
 		InitializeWebDriver.scenario.write("Verified that user reached on transaction report page");
 	}
 
@@ -122,7 +122,7 @@ public class CardDef {
 
 	@Then("^user must reached to Load Card page validate by URL$")
 	public void user_must_reached_to_Load_Card_page_validate_by_URL() throws Throwable {
-		comP.verifyURL(Constants.URL + ObjectRepo.reader.getLoadCardURL());
+		commonPage.verifyURL(Constants.URL + ObjectRepo.reader.getLoadCardURL());
 		InitializeWebDriver.scenario.write("Verified that user reached on load card page");
 	}
 
@@ -1515,154 +1515,154 @@ public class CardDef {
 
 	@And("^user can fetch kit details and customer details for default GC$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC client2$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_client2() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for retailer GPR client2$")
 	public void user_can_fetch_kit_details_and_customer_details_for_retailer_GPR_client2() throws Throwable {
-		kitNumber = comP.getCardIssuedToClient2KitNumber(Constants.GPR_ProgramName);
+		kitNumber = commonPage.getCardIssuedToClient2KitNumber(Constants.GPR_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for retailer GC client2$")
 	public void user_can_fetch_kit_details_and_customer_details_for_retailer_GC_client2() throws Throwable {
-		kitNumber = comP.getCardIssuedToClient2KitNumber(Constants.GC_ProgramName);
+		kitNumber = commonPage.getCardIssuedToClient2KitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC client2 second$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_client2_second() throws Throwable {
-		kitNumber2 = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
+		kitNumber2 = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber2);
 		DataConstants.customerMobileNo2 = clP.fetchCustomerMobile(kitNumber2);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC client2 card loaded$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_client2_card_loaded() throws Throwable {
-		kitNumber = comP.getCardLoadedKitNumber(Constants.GC_Default_ProgramName1);
+		kitNumber = commonPage.getCardLoadedKitNumber(Constants.GC_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC second$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_second() throws Throwable {
-		kitNumber2 = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
+		kitNumber2 = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber2);
 		DataConstants.customerMobileNo2 = clP.fetchCustomerMobile(kitNumber2);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC1 second$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC1_second() throws Throwable {
-		kitNumber2 = comP.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
+		kitNumber2 = commonPage.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber2);
 		DataConstants.customerMobileNo2 = clP.fetchCustomerMobile(kitNumber2);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC second client2$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_second_client2() throws Throwable {
-		kitNumber2 = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
+		kitNumber2 = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber2);
 		DataConstants.customerMobileNo2 = clP.fetchCustomerMobile(kitNumber2);
 	}
 
 	@And("^user can fetch kit details and customer details for default GPR second$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GPR_second() throws Throwable {
-		kitNumber2 = comP.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
+		kitNumber2 = commonPage.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber2);
 		DataConstants.customerMobileNo2 = clP.fetchCustomerMobile(kitNumber2);
 	}
 
 	@And("^user can fetch kit details and customer details for default GPR third$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GPR_third() throws Throwable {
-		kitNumber3 = comP.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
+		kitNumber3 = commonPage.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber3);
 		DataConstants.customerMobileNo3 = clP.fetchCustomerMobile(kitNumber3);
 	}
 
 	@And("^user can fetch kit details and customer details for default GPR forth$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GPR_forth() throws Throwable {
-		kitNumber4 = comP.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
+		kitNumber4 = commonPage.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber4);
 		DataConstants.customerMobileNo4 = clP.fetchCustomerMobile(kitNumber4);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC third$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_third() throws Throwable {
-		kitNumber3 = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
+		kitNumber3 = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber3);
 		DataConstants.customerMobileNo3 = clP.fetchCustomerMobile(kitNumber3);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC forth$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_forth() throws Throwable {
-		kitNumber4 = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
+		kitNumber4 = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber4);
 		DataConstants.customerMobileNo4 = clP.fetchCustomerMobile(kitNumber4);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC1 third$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC1_third() throws Throwable {
-		kitNumber3 = comP.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
+		kitNumber3 = commonPage.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber3);
 		DataConstants.customerMobileNo3 = clP.fetchCustomerMobile(kitNumber3);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC1 forth$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC1_forth() throws Throwable {
-		kitNumber4 = comP.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
+		kitNumber4 = commonPage.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber4);
 		DataConstants.customerMobileNo4 = clP.fetchCustomerMobile(kitNumber4);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC1 fifth$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC1_fifth() throws Throwable {
-		kitNumber5 = comP.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
+		kitNumber5 = commonPage.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber5);
 		DataConstants.customerMobileNo5 = clP.fetchCustomerMobile(kitNumber5);
 	}
 
 	@And("^user can fetch kit details and customer details for GC third$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC_third() throws Throwable {
-		kitNumber3 = comP.getCardIssuedKitNumber(Constants.GC_ProgramName);
+		kitNumber3 = commonPage.getCardIssuedKitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber3);
 		DataConstants.customerMobileNo3 = clP.fetchCustomerMobile(kitNumber3);
 	}
 
 	@And("^user can fetch kit details and customer details for GC second$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC_second() throws Throwable {
-		kitNumber2 = comP.getCardIssuedKitNumber(Constants.GC_ProgramName);
+		kitNumber2 = commonPage.getCardIssuedKitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber2);
 		DataConstants.customerMobileNo2 = clP.fetchCustomerMobile(kitNumber2);
 	}
 
 	@And("^user can fetch kit details and customer details for GPR second$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GPR_second() throws Throwable {
-		kitNumber2 = comP.getCardIssuedKitNumber(Constants.GPR_ProgramName);
+		kitNumber2 = commonPage.getCardIssuedKitNumber(Constants.GPR_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber2);
 		DataConstants.customerMobileNo2 = clP.fetchCustomerMobile(kitNumber2);
 	}
 
 	@And("^user can fetch kit details and customer details for GC forth$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC_forth() throws Throwable {
-		kitNumber4 = comP.getCardIssuedKitNumber(Constants.GC_ProgramName);
+		kitNumber4 = commonPage.getCardIssuedKitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber4);
 		DataConstants.customerMobileNo4 = clP.fetchCustomerMobile(kitNumber4);
 	}
 
 	@And("^user can fetch kit details and customer details for GC fifth$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC_fifth() throws Throwable {
-		kitNumber5 = comP.getCardIssuedKitNumber(Constants.GC_ProgramName);
+		kitNumber5 = commonPage.getCardIssuedKitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber5);
 		DataConstants.customerMobileNo5 = clP.fetchCustomerMobile(kitNumber5);
 	}
@@ -1670,223 +1670,223 @@ public class CardDef {
 	@And("^update Kit Status to Card In Progress$")
 	public void update_Kit_Status_to_Card_In_Progress() throws Throwable {
 //		cP.updateStatus(kitNumber, "Card Issued");
-		comP.updateStatus(kitNumber, "Card In Progress");
+		commonPage.updateStatus(kitNumber, "Card In Progress");
 	}
 
 	@And("^update Kit Status to Card In Progress second$")
 	public void update_Kit_Status_to_Card_In_Progress_second() throws Throwable {
 //		cP.updateStatus(kitNumber, "Card Issued");
-		comP.updateStatus(kitNumber2, "Card In Progress");
+		commonPage.updateStatus(kitNumber2, "Card In Progress");
 	}
 
 	@And("^update Kit Status to Card In Progress third$")
 	public void update_Kit_Status_to_Card_In_Progress_third() throws Throwable {
 //		cP.updateStatus(kitNumber, "Card Issued");
-		comP.updateStatus(kitNumber3, "Card In Progress");
+		commonPage.updateStatus(kitNumber3, "Card In Progress");
 	}
 
 	@And("^update Kit Status to Card In Progress forth$")
 	public void update_Kit_Status_to_Card_In_Progress_forth() throws Throwable {
 //		cP.updateStatus(kitNumber, "Card Issued");
-		comP.updateStatus(kitNumber4, "Card In Progress");
+		commonPage.updateStatus(kitNumber4, "Card In Progress");
 	}
 
 	@And("^update Kit Status to Card In Progress fifth$")
 	public void update_Kit_Status_to_Card_In_Progress_fifth() throws Throwable {
 //		cP.updateStatus(kitNumber, "Card Issued");
-		comP.updateStatus(kitNumber5, "Card In Progress");
+		commonPage.updateStatus(kitNumber5, "Card In Progress");
 	}
 
 	@And("^update Kit Status to Card In Progress To Card$")
 	public void update_Kit_Status_to_Card_In_Progress_To_Card() throws Throwable {
 //		cP.updateStatus(kitNumber, "Card Issued");
-		comP.updateStatus(kitNumberToCard, "Card In Progress");
+		commonPage.updateStatus(kitNumberToCard, "Card In Progress");
 	}
 
 	@And("^update Kit Status to Card In Progress client2$")
 	public void update_Kit_Status_to_Card_In_Progress_client2() throws Throwable {
 //		cP.updateStatus(kitNumber, "Card Issued");
-		comP.updateStatus(kitNumber2, "Card In Progress");
+		commonPage.updateStatus(kitNumber2, "Card In Progress");
 	}
 
 	@And("^user can fetch kit details and customer details for GC$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for GC To Card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC_To_Card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GC_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumberToCard);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 	}
 
 	@And("^user can fetch kit details and customer details for GPR$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GPR() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GPR_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GPR_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for GPR To Card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GPR_To_Card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GPR_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GPR_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumberToCard);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 	}
 
 	@And("^user can fetch kit details and customer details for lending GC To Card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_lending_GC_To_Card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GC_Lending_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GC_Lending_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumberToCard);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 	}
 
 	@And("^user can fetch kit details and customer details for lending GPR To Card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_lending_GPR_To_Card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GPR_Lending_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GPR_Lending_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumberToCard);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC1$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC1() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC1 8 bunch$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC1_8_bunch() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC1 To Card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC1_To_Card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumberToCard);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 	}
 
 	@And("^user can fetch kit details and customer details for GC1$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC1() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC1_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC1_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for GC1 second$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC1_second() throws Throwable {
-		kitNumber2 = comP.getCardIssuedKitNumber(Constants.GC1_ProgramName);
+		kitNumber2 = commonPage.getCardIssuedKitNumber(Constants.GC1_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber2);
 		DataConstants.customerMobileNo2 = clP.fetchCustomerMobile(kitNumber2);
 	}
 
 	@And("^user can fetch kit details and customer details for GC1 third$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC1_third() throws Throwable {
-		kitNumber3 = comP.getCardIssuedKitNumber(Constants.GC1_ProgramName);
+		kitNumber3 = commonPage.getCardIssuedKitNumber(Constants.GC1_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber3);
 		DataConstants.customerMobileNo3 = clP.fetchCustomerMobile(kitNumber3);
 	}
 
 	@And("^user can fetch kit details and customer details for GC1 forth$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC1_forth() throws Throwable {
-		kitNumber4 = comP.getCardIssuedKitNumber(Constants.GC1_ProgramName);
+		kitNumber4 = commonPage.getCardIssuedKitNumber(Constants.GC1_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber4);
 		DataConstants.customerMobileNo4 = clP.fetchCustomerMobile(kitNumber4);
 	}
 
 	@And("^user can fetch kit details and customer details for GC1 fifth$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC1_fifth() throws Throwable {
-		kitNumber5 = comP.getCardIssuedKitNumber(Constants.GC1_ProgramName);
+		kitNumber5 = commonPage.getCardIssuedKitNumber(Constants.GC1_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber5);
 		DataConstants.customerMobileNo5 = clP.fetchCustomerMobile(kitNumber5);
 	}
 
 	@And("^user can fetch kit details and customer details for GC1 To Card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC1_To_Card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GC1_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GC1_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumberToCard);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC for file upload$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_for_file_upload() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for GC for file upload$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC_for_file_upload() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for GC1 for file upload$")
 	public void user_can_fetch_kit_details_and_customer_details_for_GC1_for_file_upload() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC1_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC1_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC1 for file upload$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC1_for_file_upload() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC1_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch used kit details and customer details for default GC$")
 	public void user_can_fetch_used_kit_details_and_customer_details_for_default_GC() throws Throwable {
-		kitNumber = comP.getCardLoadedKitNumber(Constants.GC_Default_ProgramName);
+		kitNumber = commonPage.getCardLoadedKitNumber(Constants.GC_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch used kit details and customer details for GC$")
 	public void user_can_fetch_used_kit_details_and_customer_details_for_GC() throws Throwable {
-		kitNumber = comP.getCardLoadedKitNumber(Constants.GC_ProgramName);
+		kitNumber = commonPage.getCardLoadedKitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch used kit details and customer details for GC1$")
 	public void user_can_fetch_used_kit_details_and_customer_details_for_GC1() throws Throwable {
-		kitNumber = comP.getCardLoadedKitNumber(Constants.GC1_ProgramName);
+		kitNumber = commonPage.getCardLoadedKitNumber(Constants.GC1_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch used kit details and customer details for default GC1$")
 	public void user_can_fetch_used_kit_details_and_customer_details_for_default_GC1() throws Throwable {
-		kitNumber = comP.getCardLoadedKitNumber(Constants.GC1_Default_ProgramName1);
+		kitNumber = commonPage.getCardLoadedKitNumber(Constants.GC1_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch used kit details and customer details for default GC for file upload$")
 	public void user_can_fetch_used_kit_details_and_customer_details_for_default_GC_for_file_upload() throws Throwable {
-		kitNumber = comP.getCardLoadedKitNumber(Constants.GC_Default_ProgramName);
+		kitNumber = commonPage.getCardLoadedKitNumber(Constants.GC_Default_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch used kit details and customer details for GC for file upload$")
 	public void user_can_fetch_used_kit_details_and_customer_details_for_GC_for_file_upload() throws Throwable {
-		kitNumber = comP.getCardLoadedKitNumber(Constants.GC_ProgramName);
+		kitNumber = commonPage.getCardLoadedKitNumber(Constants.GC_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch used kit details and customer details for GC1 for file upload$")
 	public void user_can_fetch_used_kit_details_and_customer_details_for_GC1_for_file_upload() throws Throwable {
-		kitNumber = comP.getCardLoadedKitNumber(Constants.GC1_ProgramName);
+		kitNumber = commonPage.getCardLoadedKitNumber(Constants.GC1_ProgramName);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
@@ -1894,14 +1894,14 @@ public class CardDef {
 	@And("^user can fetch used kit details and customer details for default GC1 for file upload$")
 	public void user_can_fetch_used_kit_details_and_customer_details_for_default_GC1_for_file_upload()
 			throws Throwable {
-		kitNumber = comP.getCardLoadedKitNumber(Constants.GC1_Default_ProgramName1);
+		kitNumber = commonPage.getCardLoadedKitNumber(Constants.GC1_Default_ProgramName1);
 		InitializeWebDriver.scenario.write("Get issue kit : " + kitNumber);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 	}
 
 	@And("^user can fetch kit details and customer details for default GPR$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GPR() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 //		String[] details = clP.fetchCustomerMobileAndKitDetail().split("####");
 //		DataConstants.customerMobileNo = details[0];
@@ -1910,7 +1910,7 @@ public class CardDef {
 
 	@And("^user can fetch kit details and customer details for default GPR To Card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GPR_To_Card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 //		String[] details = c2cP.fetchCustomerMobileAndKitDetailToCard().split("####");
 //		DataConstants.customerMobileNoToCard = details[0];
@@ -1919,7 +1919,7 @@ public class CardDef {
 
 	@And("^user can fetch kit details and customer details for default GPR Second$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GPR_Second() throws Throwable {
-		kitNumber2 = comP.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
+		kitNumber2 = commonPage.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
 		DataConstants.customerMobileNo2 = clP.fetchCustomerMobile(kitNumber2);
 //		String[] details = c2cP.fetchCustomerMobileAndKitDetailToCard().split("####");
 //		DataConstants.customerMobileNo2 = details[0];
@@ -1928,7 +1928,7 @@ public class CardDef {
 
 	@And("^user can fetch kit details and customer details for default GC To Card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_To_Card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 //		String[] details = c2cP.fetchCustomerMobileAndKitDetailToCard().split("####");
 //		DataConstants.customerMobileNoToCard = details[0];
@@ -1937,7 +1937,7 @@ public class CardDef {
 
 	@And("^user can fetch kit details and customer details for default GC To Card client2$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_To_Card_client2() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 //		String[] details = c2cP.fetchCustomerMobileAndKitDetailToCard().split("####");
 //		DataConstants.customerMobileNoToCard = details[0];
@@ -1946,12 +1946,12 @@ public class CardDef {
 
 	@And("^user can fetch kit details for card issuance for default GC To Card$")
 	public void user_can_fetch_kit_details_for_card_issuance_for_default_GC_To_Card() throws Throwable {
-		kitNumberToCard = comP.getReadyToCardIssueKitNumber(Constants.GC_Default_ProgramName);
+		kitNumberToCard = commonPage.getReadyToCardIssueKitNumber(Constants.GC_Default_ProgramName);
 	}
 
 	@And("^user can fetch kit details and customer details for default GC card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GC_card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 //		String[] details = c2cP.fetchCustomerMobileAndKitDetailToCard().split("####");
 //		DataConstants.customerMobileNoToCard = details[0];
@@ -1960,7 +1960,7 @@ public class CardDef {
 
 	@And("^user can fetch kit details and customer details for default GPR card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GPR_card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GPR_Default_ProgramName);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 //		String[] details = c2cP.fetchCustomerMobileAndKitDetailToCard().split("####");
 //		DataConstants.customerMobileNoToCard = details[0];
@@ -1969,7 +1969,7 @@ public class CardDef {
 
 	@And("^user can fetch kit details and customer details for default GPR client2 card$")
 	public void user_can_fetch_kit_details_and_customer_details_for_default_GPR_client2_card() throws Throwable {
-		kitNumberToCard = comP.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
+		kitNumberToCard = commonPage.getCardIssuedKitNumber(Constants.GC_Default_ProgramName1);
 		DataConstants.customerMobileNoToCard = clP.fetchCustomerMobile(kitNumberToCard);
 //		String[] details = c2cP.fetchCustomerMobileAndKitDetailToCard().split("####");
 //		DataConstants.customerMobileNoToCard = details[0];
@@ -1996,7 +1996,7 @@ public class CardDef {
 	public void user_click_on_Load_Card_submit_button() throws Throwable {
 		clP.clickOnLoadCardSubmitButton();
 		String s = "Click on \"Submit\" button\n";
-		comP.clickOnConfirmButton();
+		commonPage.clickOnConfirmButton();
 		s = s + "Click on \"Confirm\" button";
 		InitializeWebDriver.scenario.write(s);
 	}
@@ -3617,17 +3617,17 @@ public class CardDef {
 
 	@And("^update Kit Status to Card Loaded$")
 	public void update_Kit_Status_to_Assigned() throws Throwable {
-		comP.updateStatus(kitNumber, "Card Loaded");
+		commonPage.updateStatus(kitNumber, "Card Loaded");
 	}
 
 	@And("^update Kit Status to Card Loaded To Card$")
 	public void update_Kit_Status_to_Assigned_To_Card() throws Throwable {
-		comP.updateStatus(kitNumberToCard, "Card Loaded");
+		commonPage.updateStatus(kitNumberToCard, "Card Loaded");
 	}
 
 	@And("^update Kit Status to Card Loaded second$")
 	public void update_Kit_Status_to_Assigned_second() throws Throwable {
-		comP.updateStatus(kitNumber2, "Card Loaded");
+		commonPage.updateStatus(kitNumber2, "Card Loaded");
 	}
 
 	@Then("^user can be able to fetch customer hash id from mobile number$")
@@ -3740,7 +3740,7 @@ public class CardDef {
 
 	@And("^user can fetch kit details and customer details for lending GPR$")
 	public void user_can_fetch_kit_details_and_customer_details_for_lending_GPR() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GPR_Lending_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GPR_Lending_ProgramName);
 //		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 //		String[] details = clP.fetchCustomerMobileAndKitDetail().split("####");
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
@@ -3749,7 +3749,7 @@ public class CardDef {
 
 	@And("^user can fetch kit details and customer details for lending GC$")
 	public void user_can_fetch_kit_details_and_customer_details_for_lending_GC() throws Throwable {
-		kitNumber = comP.getCardIssuedKitNumber(Constants.GC_Lending_ProgramName);
+		kitNumber = commonPage.getCardIssuedKitNumber(Constants.GC_Lending_ProgramName);
 //		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
 //		String[] details = clP.fetchCustomerMobileAndKitDetail().split("####");
 		DataConstants.customerMobileNo = clP.fetchCustomerMobile(kitNumber);
