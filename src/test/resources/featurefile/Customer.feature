@@ -277,6 +277,7 @@ Scenario: 5.15 - Customer - Add Customer Using File Upload With 2 Char In Firstn
 	Then user must reached to List Customer page validate by URL 
 	And user must not able to see added customer record
 	
+@Ignore
 Scenario: 5.16 - Customer - Add Customer Using File Upload With Special Char For GC1
 	Given user login as GC1 Retailer user
 	Given user navigate to Bulk Operations

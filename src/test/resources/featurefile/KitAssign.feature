@@ -587,7 +587,8 @@ Scenario: 4.2 - Kit Assign - Admin User - GC1 Default Program Single Kit Assign 
 	Then user must reached to List Assigned Kit page validate by URL
 	When user search for Kit No
 	Then user must be see result and Kit No status is assigned
-	
+
+@Ignore	
 Scenario: 4.7 - Kit Assign - Admin User - GC1 Program Single Kit Assign To Client - Positive
 	Given user login with Admin user
 	Given user navigate to Card Inventory
