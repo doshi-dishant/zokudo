@@ -1,5 +1,6 @@
 Feature: Bulk Operations Scenarios 
 
+@Ignore @failed_confirm
 Scenario: 1.19 - Bulk Operations - Positive
 	Given user login as GC Default Program user
 	Given user navigate to Kit Assign

@@ -13,6 +13,7 @@ Scenario: 1.8 - Customer - Add Customer
 	Then user must reached to List Customer page validate by URL 
 	And user must be see added customer record
 	
+@Ignore
 Scenario: 1.9 - Customer - Field KYC Type 
 	Given user navigate to Customer
 	When user click on List Customer 

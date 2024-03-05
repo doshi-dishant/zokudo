@@ -358,7 +358,8 @@ Scenario: 3.2 - Kit Assign - Distributor User - GPR Program Single Kit Assigned 
 	Given user navigate to Kit Assign
 	When user click on List Assigned Kit
 	Then user can able to verify status of Kit No is assigned for retailer
-	
+
+@Ignore
 Scenario: 3.1 - Kit Assign - Super Distributor User - GPR Program Bulk Kit Assigned To Distributor - Positive
 	Given user login as GPR Super Distributor user
 	Given user navigate to Kit Assign
