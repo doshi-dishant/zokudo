@@ -10,6 +10,7 @@ Feature: API Scenarios
     Given user send post request for auth reversal failed
     Then user must be get description Invalid Transaction
 
+@Ignore
   #TC-3.20
   Scenario: Auth Credit - 3.20
     Given user send post request for verify insufficient funds

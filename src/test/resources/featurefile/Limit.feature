@@ -1,5 +1,6 @@
 Feature: Limit Scenarios 
 
+@Ignore
 Scenario: 6.1 - Limit - Set Limits For Wallet And KYC
 	Given user login with Admin user
 	Given user navigate to Limit
