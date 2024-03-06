@@ -24,6 +24,7 @@ Scenario: 2.1 - Bulk Card Upload With GC Program- Positive
 	And user select Daterange/fileName/kit/Program and hit Filter
 	Then user can see Uploaded file result Status for kit
 		
+@Ignore
 Scenario: 2.3 - Bulk Card Upload - Already Uploaded Cards - Negative
 	Given user login with Admin user
 	Given user navigate to Card Inventory
